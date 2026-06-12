@@ -1,3 +1,5 @@
+import "./home.css";
+import { useState } from "react";
 import Navbar from "../Components/Navbar/navbar";
 import MobileNavbar from "../Components/MobileNavbar/mobilenavbar";
 import Logo from "../Components/logo";
@@ -28,9 +30,45 @@ import sec10Img5 from "../assets/sec10_5.png";
 import sec10Img6 from "../assets/sec10_6.png";
 import sec10Img7 from "../assets/sec10_7.png";
 import starImg from "../assets/star.png";
-import "./home.css";
+import sec1Icon from "../assets/sec1_Icon.png";
+
 
 function Home() {
+ const [activeFaq, setActiveFaq] = useState(null); 
+
+ const faqItems = [
+  {
+    question: "How do I buy CoinShift tokens?",
+    answer:
+      "The official launch of CoinShift tokens. Prepare for a groundbreaking debut with extensive marketing and community engagement.",
+  },
+  {
+    question: "Is CoinShift secure?",
+    answer:
+      "CoinShift prioritizes security through advanced encryption, secure smart contracts, and continuous monitoring to ensure a trusted ecosystem.",
+  },
+  {
+    question: "What can I do with CoinShift tokens?",
+    answer:
+      "You can stake tokens, participate in governance, make marketplace purchases, and access future ecosystem utilities.",
+  },
+  {
+    question: "How do I stake CoinShift tokens?",
+    answer:
+      "Connect your wallet, choose a staking pool, lock your tokens, and start earning rewards based on the selected plan.",
+  },
+  {
+    question: "What is the CoinShift roadmap?",
+    answer:
+      "The roadmap includes token launch, exchange listings, ecosystem development, strategic partnerships, and global adoption initiatives.",
+  },
+  {
+    question: "Can I participate in governance with CoinShift tokens?",
+    answer:
+      "Yes. Token holders can vote on proposals and contribute to important ecosystem decisions.",
+  },
+];
+
   return (
     <main className="home">
       <MobileNavbar />
@@ -42,7 +80,7 @@ function Home() {
           <div className="home__headline" aria-label="CoinShift empowering the future of decentralized finance">
             <div className="home__headline-line home__headline-line--top">
               <span>CoinShift</span>
-              <img className="home__accent-image home__accent-image--pill" src={headerEle1} alt="" aria-hidden="true" />
+              <img className="home__accent-image home__accent-image--icon" src={sec1Icon} alt="" aria-hidden="true" />
               <span>Empowering the</span>
             </div>
 
@@ -52,20 +90,26 @@ function Home() {
 
             <div className="home__headline-line home__headline-line--bottom">
               <span>Finance</span>
-              <img className="home__accent-image home__accent-image--pill" src={headerEle2} alt="" aria-hidden="true" />
+              <img className="home__accent-image home__accent-image--icon home__accent-image--icon--end" src={sec1Icon} alt="" aria-hidden="true" />
             </div>
           </div>
 
-          <img className="home__star home__star--left" src={starImg} alt="" aria-hidden="true" />
-          <img className="home__star home__star--right" src={starImg} alt="" aria-hidden="true" />
+          {/* decorative header elements on either side */}
+          <img className="home__header-ele home__header-ele--left" src={headerEle2} alt="" aria-hidden="true" />
+          <img className="home__header-ele home__header-ele--right" src={headerEle1} alt="" aria-hidden="true" />
+
+          <img className="home__star home__star_left" src={starImg} alt="" aria-hidden="true" />
+          <img className="home__star home__star_right" src={starImg} alt="" aria-hidden="true" />
+
+          <div className="home__cta">
+            <Button label="Buy CoinShift" variant="primary" />
+          </div>
 
           <div className="home__robot-wrap">
             <img className="home__robot" src={robotImg} alt="CoinShift robot mascot" />
           </div>
 
-          <div className="home__cta">
-            <Button label="Buy CoinShift" variant="primary" />
-          </div>
+          
         </div>
       </section>
 
@@ -115,51 +159,51 @@ function Home() {
               <h2 className="home__cards-heading">Every feature built for modern DeFi</h2>
               <div className="home__cards-grid">
 
-                <article className="home__card">
-                  <div className="home__card-content">
-                    <span className="home__card-badge">+</span>
-                    <div>
-                      <h3 className="home__card-title">Fast Transactions</h3>
-                      <p className="home__card-text">Experience lightning-fast transfers with minimal fees, ensuring every transfer is completed efficiently and at low cost.</p>
-                    </div>
-                  </div>
-                  <img className="home__card-image" src={sec3Card1} alt="Fast transactions illustration" />
-                </article>
+  <article className="home__card home__card--top">
+    <div className="home__card-content">
+      <span className="home__card-badge">+</span>
+      <div>
+        <h3 className="home__card-title">Fast Transactions</h3>
+        <p className="home__card-text">Experience lightning-fast transfers with minimal fees, ensuring every transfer is completed efficiently and at low cost.</p>
+      </div>
+    </div>
+    <img className="home__card-image" src={sec3Card1} alt="Fast transactions illustration" />
+  </article>
 
-                <article className="home__card">
-                  <div className="home__card-content">
-                    <span className="home__card-badge">+</span>
-                    <div>
-                      <h3 className="home__card-title">Decentralized Governance</h3>
-                      <p className="home__card-text">CoinShift empowers its community by enabling decentralized governance, voting on proposals and shaping the future platform.</p>
-                    </div>
-                  </div>
-                  <img className="home__card-image" src={sec3Card2} alt="Decentralized governance illustration" />
-                </article>
+  <article className="home__card home__card--top">
+    <div className="home__card-content">
+      <span className="home__card-badge">+</span>
+      <div>
+        <h3 className="home__card-title">Decentralized Governance</h3>
+        <p className="home__card-text">CoinShift empowers its community by enabling decentralized governance, voting on proposals and shaping the future platform.</p>
+      </div>
+    </div>
+    <img className="home__card-image" src={sec3Card2} alt="Decentralized governance illustration" />
+  </article>
 
-                <article className="home__card">
-                  <div className="home__card-content">
-                    <span className="home__card-badge">+</span>
-                    <div>
-                      <h3 className="home__card-title">Staking &amp; Rewards</h3>
-                      <p className="home__card-text">Stake your CoinShift tokens and earn passive rewards with competitive Annual Percentage Yields (APY) while contributing to network security.</p>
-                    </div>
-                  </div>
-                  <img className="home__card-image" src={sec3Card3} alt="Staking and rewards illustration" />
-                </article>
+  <article className="home__card home__card--bottom">
+    <div className="home__card-content">
+      <span className="home__card-badge">+</span>
+      <div>
+        <h3 className="home__card-title">Staking &amp; Rewards</h3>
+        <p className="home__card-text">Stake your CoinShift tokens and earn passive rewards with competitive Annual Percentage Yields (APY) while contributing to network security.</p>
+      </div>
+    </div>
+    <img className="home__card-image" src={sec3Card3} alt="Staking and rewards illustration" />
+  </article>
 
-                <article className="home__card">
-                  <div className="home__card-content">
-                    <span className="home__card-badge">+</span>
-                    <div>
-                      <h3 className="home__card-title">Security</h3>
-                      <p className="home__card-text">CoinShift prioritizes security with advanced encryption, safeguarding tokens and data for a trusted DeFi environment.</p>
-                    </div>
-                  </div>
-                  <img className="home__card-image" src={sec3Card4} alt="Security illustration" />
-                </article>
+  <article className="home__card home__card--bottom">
+    <div className="home__card-content">
+      <span className="home__card-badge">+</span>
+      <div>
+        <h3 className="home__card-title">Security</h3>
+        <p className="home__card-text">CoinShift prioritizes security with advanced encryption, safeguarding tokens and data for a trusted DeFi environment.</p>
+      </div>
+    </div>
+    <img className="home__card-image" src={sec3Card4} alt="Security illustration" />
+  </article>
 
-              </div>
+</div>
             </div>
           </div>
         </div>
@@ -169,9 +213,8 @@ function Home() {
           <div className="home__section home__section--tokenomics home__section--clipped">
             <div className="home__tokenomics-inner">
               <div className="home__tokenomics-copy">
-                <p className="home__section-label home__section-label--dark">Tokenomics Overview</p>
                 <h2>Tokenomics Overview</h2>
-                <p>CoinShift's tokenomics are designed to ensure a fair, sustainable, and rewarding ecosystem for all participants.</p>
+                <p>CoinShift’s tokenomics are designed to ensure a fair, sustainable, and rewarding ecosystem for all participants. The total supply of CoinShift tokens is 200 million, with 100 million in circulation. The token allocation reflects our commitment to community growth, security, and long-term development.</p>
               </div>
 
               <div className="home__tokenomics-stats">
@@ -186,7 +229,7 @@ function Home() {
               </div>
 
               <div className="home__tokenomics-grid">
-                <article className="home__tokenomics-card">
+                <article className="home__tokenomics-card home__tokenomics-card--top">
                   <div>
                     <h3>40% Community</h3>
                     <p>A large portion of the supply is dedicated to community engagement, rewards, and incentives to ensure active participation.</p>
@@ -194,7 +237,7 @@ function Home() {
                   <span className="home__tokenomics-badge">40%</span>
                 </article>
 
-                <article className="home__tokenomics-card">
+                <article className="home__tokenomics-card home__tokenomics-card--top">
                   <div>
                     <h3>25% Staking</h3>
                     <p>A significant share is allocated to staking rewards, encouraging users to hold and participate in securing the network.</p>
@@ -202,7 +245,7 @@ function Home() {
                   <span className="home__tokenomics-badge">25%</span>
                 </article>
 
-                <article className="home__tokenomics-card">
+                <article className="home__tokenomics-card home__tokenomics-card--bottom">
                   <div>
                     <h3>20% Team</h3>
                     <p>Reserved for the CoinShift development team and advisors, ensuring alignment with long-term goals of the project.</p>
@@ -210,7 +253,7 @@ function Home() {
                   <span className="home__tokenomics-badge">20%</span>
                 </article>
 
-                <article className="home__tokenomics-card">
+                <article className="home__tokenomics-card home__tokenomics-card--bottom">
                   <div>
                     <h3>15% Partners</h3>
                     <p>Allocated for strategic partnerships and ecosystem growth, helping expand CoinShift's reach and adoption.</p>
@@ -376,7 +419,7 @@ function Home() {
               </div>
 
               <div className="home__roadmap-grid">
-                <article className="home__roadmap-card home__roadmap-card--active">
+                <article className="home__roadmap-card home__roadmap-card--active home__roadmap-card--top">
                   <div className="home__roadmap-top">
                     <span>Q1 2025</span>
                     <h3>Token Launch</h3>
@@ -384,7 +427,7 @@ function Home() {
                   <p>The official launch of CoinShift tokens. Prepare for a groundbreaking debut with extensive marketing and community engagement.</p>
                 </article>
 
-                <article className="home__roadmap-card">
+                <article className="home__roadmap-card home__roadmap-card--top">
                   <div className="home__roadmap-top">
                     <span>Q2 2025</span>
                     <h3>Exchange Listings &amp; Community Growth</h3>
@@ -392,7 +435,7 @@ function Home() {
                   <p>Listing CoinShift tokens on major exchanges, expanding our global community, and fostering active user engagement.</p>
                 </article>
 
-                <article className="home__roadmap-card">
+                <article className="home__roadmap-card home__roadmap-card--bottom">
                   <div className="home__roadmap-top">
                     <span>Q3 2025</span>
                     <h3>Partnerships &amp; Ecosystem Development</h3>
@@ -400,7 +443,7 @@ function Home() {
                   <p>Forming strategic partnerships with other blockchain projects and further developing the CoinShift ecosystem for broader adoption.</p>
                 </article>
 
-                <article className="home__roadmap-card">
+                <article className="home__roadmap-card home__roadmap-card--bottom">
                   <div className="home__roadmap-top">
                     <span>Q4 2025</span>
                     <h3>Global Expansion &amp; Adoption</h3>
@@ -448,58 +491,58 @@ function Home() {
         <div id="faq" className="home__section-outline home__section-outline--faq home__section-outline--top-down">
           <div className="home__section home__section--faq home__section--clipped">
             <div className="home__faq-inner">
-            <div className="home__faq-copy">
-              <p className="home__section-label home__section-label--light">Frequently Asked Questions</p>
-              <h2>Frequently Asked Questions</h2>
-              <p>Everything you need to know about buying, staking, and using CoinShift tokens.</p>
-            </div>
-            <div className="home__faq-list">
-              <article className="home__faq-card home__faq-card--open">
-                <div className="home__faq-question">
-                  <span>How do I buy CoinShift tokens?</span>
-                  <img src={sec9Icon} alt="Open FAQ" className="home__faq-toggle" />
-                </div>
-                <p>The official launch of CoinShift tokens. Prepare for a groundbreaking debut with extensive marketing and community engagement.</p>
-              </article>
+              <div className="home__faq-copy">
+                <p className="home__section-label home__section-label--light">
+                  Frequently Asked Questions
+                </p>
 
-              <article className="home__faq-card">
-                <div className="home__faq-question">
-                  <span>Is CoinShift secure?</span>
-                  <img src={sec9Icon} alt="Open FAQ" className="home__faq-toggle" />
-                </div>
-              </article>
+                <h2>Frequently Asked Questions</h2>
 
-              <article className="home__faq-card">
-                <div className="home__faq-question">
-                  <span>What can I do with CoinShift tokens?</span>
-                  <img src={sec9Icon} alt="Open FAQ" className="home__faq-toggle" />
-                </div>
-              </article>
+                <p>
+                  Everything you need to know about buying, staking, and using
+                  CoinShift tokens.
+                </p>
+              </div>
 
-              <article className="home__faq-card">
-                <div className="home__faq-question">
-                  <span>How do I stake CoinShift tokens?</span>
-                  <img src={sec9Icon} alt="Open FAQ" className="home__faq-toggle" />
-                </div>
-              </article>
+              <div className="home__faq-list">
+                {faqItems.map((item, index) => (
+                  <article
+                    key={index}
+                    className={`home__faq-card ${
+                      activeFaq === index ? "home__faq-card--open" : ""
+                    }`}
+                  >
+                    <button
+                      className="home__faq-question"
+                      onClick={() =>
+                        setActiveFaq(activeFaq === index ? null : index)
+                      }
+                    >
+                      <span>{item.question}</span>
 
-              <article className="home__faq-card">
-                <div className="home__faq-question">
-                  <span>What is the CoinShift roadmap?</span>
-                  <img src={sec9Icon} alt="Open FAQ" className="home__faq-toggle" />
-                </div>
-              </article>
+                      <img
+                        src={sec9Icon}
+                        alt=""
+                        className={`home__faq-toggle ${
+                          activeFaq === index
+                            ? "home__faq-toggle--open"
+                            : ""
+                        }`}
+                      />
+                    </button>
 
-              <article className="home__faq-card">
-                <div className="home__faq-question">
-                  <span>Can I participate in governance with CoinShift tokens?</span>
-                  <img src={sec9Icon} alt="Open FAQ" className="home__faq-toggle" />
-                </div>
-              </article>
+                    {activeFaq === index && (
+                      <div className="home__faq-answer">
+                        {item.answer}
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
 
         {/* sec10 – Partners */}
         <div id="partners" className="home__section-outline home__section-outline--partners home__section-outline--top-down">

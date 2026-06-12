@@ -14,7 +14,7 @@ function MobileNavbar() {
     { label: "Marketplace", href: "#marketplace" },
     { label: "Roadmap", href: "#roadmap" },
     { label: "Community", href: "#community" },
-    { label: "FAQs", href: "#faqs" },
+    { label: "FAQs", href: "#faq" },
     { label: "Partners", href: "#partners" },
   ];
 
