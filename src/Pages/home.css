@@ -495,7 +495,9 @@
   );
 } 
 
-/* Bottom row cards: notch at top */
+/* gh auth login
+gh repo clone commander-maker-Botcalm/CoinShift-Frontend.git # optional
+git push -u origin mainBottom row cards: notch at top */
 .home__card--bottom {
   clip-path: polygon(
     0 var(--card-notch-h),
