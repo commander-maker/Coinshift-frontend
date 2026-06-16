@@ -20,6 +20,10 @@ import sec6Im5 from "../assets/sec6_im5.png";
 import sec6Im6 from "../assets/sec6_im6.png";
 import sec6Im7 from "../assets/sec6_im7.png";
 import sec6Im8 from "../assets/sec6_im8.png";
+import sec8_1 from "../assets/sec8-1.png";
+import sec8_2 from "../assets/sec8-2.png";
+import sec8_3 from "../assets/sec8-3.png";
+import sec8_4 from "../assets/sec8-4.png";
 import sec8Img from "../assets/sec8.png";
 import sec9Icon from "../assets/sec9_icon.png";
 import sec10Img1 from "../assets/sec10_1.png";
@@ -134,16 +138,18 @@ function Home() {
               </div>
 
               <div className="home__section-copy">
-                <p className="home__section-label">About CoinShift</p>
+                
                 <h2>About CoinShift</h2>
                 <p>
-                  CoinShift is a utility token designed to power the next generation of
-                  decentralized applications and digital finance solutions.
+                  CoinShift is a utility token designed to power the next generation of decentralized applications (dApps) and
+                  digital finance solutions. Our mission is to provide a seamless, secure, and user-friendly ecosystem for users
+                  and developers. By leveraging cutting-edge blockchain technology, CoinShift enables effortless token
+                  swaps, staking, and real-time governance, all while ensuring the highest standards of security and transparency.
                 </p>
                 <p>
-                  Our mission is to provide a seamless, secure, and user-friendly ecosystem
-                  for users and developers, while keeping blockchain interactions simple
-                  and accessible.
+                  Whether you're a developer looking to build on our platform, a trader swapping tokens, or a user
+                  participating in governance, CoinShift provides the tools needed for efficient, low-cost, and secure digital
+                  transactions. Join us in shaping the future of finance with CoinShift – where innovation meets accessibility.
                 </p>
               </div>
             </div>
@@ -155,8 +161,8 @@ function Home() {
         <div id="features" className="home__section-outline home__section-outline--cards home__section-outline--top-down">
           <div className="home__section home__section--cards home__section--clipped">
             <div className="home__cards-inner">
-              <p className="home__section-label home__section-label--dark">Key Features of CoinShift</p>
-              <h2 className="home__cards-heading">Every feature built for modern DeFi</h2>
+
+              <h2 className="home__cards-heading">Key Features of CoinShift</h2>
               <div className="home__cards-grid">
 
   <article className="home__card home__card--top">
@@ -456,7 +462,7 @@ function Home() {
         </div>
 
         {/* sec8 */}
-        <div id="community" className="home__section-outline home__section-outline--community home__section-outline--top-down">
+        <div id="community" className="home__section-outline home__section-outline--community home__section-outline--top-up">
           <div className="home__section home__section--community home__section--clipped">
             <div className="home__community-inner">
             <div className="home__community-copy">
@@ -473,10 +479,10 @@ function Home() {
                 <li>Connect with Like-minded Individuals: Join conversations with fellow enthusiasts, traders, and advocates.</li>
               </ul>
               <div className="home__community-actions">
-                <button className="home__community-icon" aria-label="Telegram">TG</button>
-                <button className="home__community-icon" aria-label="X">X</button>
-                <button className="home__community-icon" aria-label="Medium">M</button>
-                <button className="home__community-icon" aria-label="Discord">D</button>
+                <img src={sec8_1} alt="Telegram" className="home__community-icon" />
+                <img src={sec8_2} alt="X" className="home__community-icon" />
+                <img src={sec8_3} alt="Medium" className="home__community-icon" />
+                <img src={sec8_4} alt="Discord" className="home__community-icon" />
               </div>
             </div>
 
@@ -558,11 +564,11 @@ function Home() {
                     Our strategic partnerships with leading blockchain projects, wallets, and exchanges ensure that you have access to a secure,
                     efficient, and globally connected ecosystem.
                   </p>
-                  <ul className="home__partners-list">
-                    <li>Blockchain Projects: Working with innovative projects to expand the CoinShift ecosystem.</li>
-                    <li>Exchanges: Partnering with major exchanges to ensure easy access to CoinShift tokens.</li>
-                    <li>Wallet Providers: Offering seamless wallet integration for CoinShift users.</li>
-                  </ul>
+                  <p className="home__partners-list"> 
+                    Blockchain Projects: Working with innovative projects to expand the CoinShift ecosystem. <br />
+                    Exchanges: Partnering with major exchanges to ensure easy access to CoinShift tokens.<br />
+                    Wallet Providers: Offering seamless wallet integration for CoinShift users.
+                  </p>
                 </div>
 
                 <div className="home__partners-logos">

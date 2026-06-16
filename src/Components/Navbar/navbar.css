@@ -1,7 +1,15 @@
 .navbar {
+  --navbar-height: 64px;
   background: transparent;
   padding: 6px 0 0;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: 9999;
+  box-sizing: border-box;
 }
 
 .navbar__container {
@@ -14,7 +22,7 @@
   justify-content: space-between;
   gap: clamp(0.75rem, 1.5vw, 2rem);
   box-sizing: border-box;
-  background: #ffffff;
+  background: #E6F0FE99;
   border-radius: 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -60,6 +68,7 @@
 @media (max-width: 768px) {
   .navbar {
     display: none;
+    position: static; /* restore normal flow when hidden */
   }
 
   .navbar__container {
@@ -82,5 +91,21 @@
 
   .navbar__button-wrapper {
     order: 2;
+  }
+}
+
+/* push page content below the fixed navbar on desktop-ish sizes */
+main,
+.home,
+#root {
+  padding-top: var(--navbar-height);
+}
+
+@media (max-width: 768px) {
+  /* remove content padding when navbar is hidden on small screens */
+  main,
+  .home,
+  #root {
+    padding-top: 0;
   }
 }
