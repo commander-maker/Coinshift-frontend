@@ -451,15 +451,15 @@
 .home__cards-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
+  gap: 2px;
   margin-top: 0;
 }
 
 /* ─── TECH-STYLE CARD ─── */
 .home__card {
   --card-notch-h: 24px;
-  --card-notch-w: 120px;
-  --card-notch-slope: 35px;
+  --card-notch-w: 30px;
+  --card-notch-slope: 5px;
 
   color: #0b1228;
   padding: 24px 0;
@@ -487,31 +487,24 @@
     calc(100% - 4.7px) 4.7px,
     100% 16px,
     100% calc(100% - var(--card-notch-h)),
-    calc(50% + var(--card-notch-w) + var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
-    calc(50% + var(--card-notch-w)) 100%,
-    calc(50% - var(--card-notch-w)) 100%,
-    calc(50% - var(--card-notch-w) - var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    calc(60% + var(--card-notch-w) + var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    calc(57% + var(--card-notch-w)) 100%,
+    calc(44% - var(--card-notch-w)) 100%,
+    calc(40% - var(--card-notch-w) - var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
     0 calc(100% - var(--card-notch-h))
   );
-} 
+}
 
-/* gh auth login
-gh repo clone commander-maker-Botcalm/CoinShift-Frontend.git # optional
-git push -u origin mainBottom row cards: notch at top */
 .home__card--bottom {
   clip-path: polygon(
-    0 var(--card-notch-h),
-    calc(50% - var(--card-notch-w) - var(--card-notch-slope)) var(--card-notch-h),
-    calc(50% - var(--card-notch-w)) 0,
-    calc(50% + var(--card-notch-w)) 0,
-    calc(50% + var(--card-notch-w) + var(--card-notch-slope)) var(--card-notch-h),
-    100% var(--card-notch-h),
-    100% calc(100% - 16px),
-    calc(100% - 4.7px) calc(100% - 4.7px),
-    calc(100% - 16px) 100%,
-    16px 100%,
-    4.7px calc(100% - 4.7px),
-    0 calc(100% - 16px)
+    0% 0%,       /* Top-Left */
+    35% 0%,      /* Start of notch */
+    40% 10%,     /* Drop down left */
+    60% 10%,     /* Move right across notch bottom */
+    65% 0%,      /* Move back up right */
+    100% 0%,     /* Top-Right */
+    100% 100%,   /* Bottom-Right */
+    0% 100%      /* Bottom-Left */
   );
 }
 
@@ -647,7 +640,7 @@ git push -u origin mainBottom row cards: notch at top */
 .home__tokenomics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 2px;
 }
 
 .home__tokenomics-card {
@@ -667,6 +660,7 @@ git push -u origin mainBottom row cards: notch at top */
 }
 
 /* Top row: notch cut into bottom edge */
+/*
 .home__tokenomics-card--top {
   clip-path: polygon(
     0 0,
@@ -681,6 +675,7 @@ git push -u origin mainBottom row cards: notch at top */
 }
 
 /* Bottom row: notch cut into top edge */
+/*
 .home__tokenomics-card--bottom {
   clip-path: polygon(
     0 var(--card-notch-h),
@@ -691,6 +686,36 @@ git push -u origin mainBottom row cards: notch at top */
     100% var(--card-notch-h),
     100% 100%,
     0 100%
+  );
+}   */
+
+.home__tokenomics-card--top {
+  clip-path: polygon(
+    0 16px,
+    4.7px 4.7px,
+    16px 0,
+    calc(100% - 16px) 0,
+    calc(100% - 4.7px) 4.7px,
+    100% 16px,
+    100% calc(100% - var(--card-notch-h)),
+    calc(60% + var(--card-notch-w) + var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    calc(57% + var(--card-notch-w)) 100%,
+    calc(44% - var(--card-notch-w)) 100%,
+    calc(40% - var(--card-notch-w) - var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    0 calc(100% - var(--card-notch-h))
+  );
+}
+
+.home__tokenomics-card--bottom {
+  clip-path: polygon(
+    0% 0%,       /* Top-Left */
+    35% 0%,      /* Start of notch */
+    40% 10%,     /* Drop down left */
+    60% 10%,     /* Move right across notch bottom */
+    65% 0%,      /* Move back up right */
+    100% 0%,     /* Top-Right */
+    100% 100%,   /* Bottom-Right */
+    0% 100%      /* Bottom-Left */
   );
 }
 
@@ -744,7 +769,7 @@ git push -u origin mainBottom row cards: notch at top */
   .home__tokenomics-grid {
     display: flex;
     flex-wrap: nowrap;
-    gap: 16px;
+    gap:6px;
     align-items: stretch;
   }
 
@@ -1398,13 +1423,13 @@ git push -u origin mainBottom row cards: notch at top */
 .home__roadmap-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 2px;
 }
 
 .home__roadmap-card {
   --card-notch-h: 24px;
   --card-notch-w: 36px;
-  --card-notch-slope: 16px;
+  --card-notch-slope: 4px;
   --card-radius: 26px;
 
   background: #1f2937;
@@ -1425,36 +1450,31 @@ git push -u origin mainBottom row cards: notch at top */
 /* Top row: rounded top corners, notch cut into bottom edge */
 .home__roadmap-card--top {
   clip-path: polygon(
-    0 var(--card-radius),
-    calc(var(--card-radius) * 0.293) calc(var(--card-radius) * 0.293),
-    var(--card-radius) 0,
-    calc(100% - var(--card-radius)) 0,
-    calc(100% - var(--card-radius) * 0.293) calc(var(--card-radius) * 0.293),
-    100% var(--card-radius),
+    0 16px,
+    4.7px 4.7px,
+    16px 0,
+    calc(100% - 16px) 0,
+    calc(100% - 4.7px) 4.7px,
+    100% 16px,
     100% calc(100% - var(--card-notch-h)),
-    calc(50% + var(--card-notch-w) + var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
-    calc(50% + var(--card-notch-w)) 100%,
-    calc(50% - var(--card-notch-w)) 100%,
-    calc(50% - var(--card-notch-w) - var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    calc(60% + var(--card-notch-w) + var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    calc(57% + var(--card-notch-w)) 100%,
+    calc(44% - var(--card-notch-w)) 100%,
+    calc(40% - var(--card-notch-w) - var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
     0 calc(100% - var(--card-notch-h))
   );
 }
 
-/* Bottom row: rounded bottom corners, notch cut into top edge */
 .home__roadmap-card--bottom {
   clip-path: polygon(
-    0 var(--card-notch-h),
-    calc(50% - var(--card-notch-w) - var(--card-notch-slope)) var(--card-notch-h),
-    calc(50% - var(--card-notch-w)) 0,
-    calc(50% + var(--card-notch-w)) 0,
-    calc(50% + var(--card-notch-w) + var(--card-notch-slope)) var(--card-notch-h),
-    100% var(--card-notch-h),
-    100% calc(100% - var(--card-radius)),
-    calc(100% - var(--card-radius) * 0.293) calc(100% - var(--card-radius) * 0.293),
-    calc(100% - var(--card-radius)) 100%,
-    var(--card-radius) 100%,
-    calc(var(--card-radius) * 0.293) calc(100% - var(--card-radius) * 0.293),
-    0 calc(100% - var(--card-radius))
+    0% 0%,       /* Top-Left */
+    35% 0%,      /* Start of notch */
+    40% 10%,     /* Drop down left */
+    60% 10%,     /* Move right across notch bottom */
+    65% 0%,      /* Move back up right */
+    100% 0%,     /* Top-Right */
+    100% 100%,   /* Bottom-Right */
+    0% 100%      /* Bottom-Left */
   );
 }
 
@@ -2311,7 +2331,7 @@ git push -u origin mainBottom row cards: notch at top */
 .home__faq-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10                                                                                                                                               px;
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
@@ -2333,17 +2353,18 @@ git push -u origin mainBottom row cards: notch at top */
   transform: translateY(-1px);
 }
 
+
 /* Odd cards: trapezoid notch cut into bottom edge */
 .home__faq-card:nth-child(odd) {
   clip-path: polygon(
     0 0,
     100% 0,
-    100% 100%,
-    calc(var(--card-notch-x2) + var(--card-notch-slope)) 100%,
-    var(--card-notch-x2) calc(100% - var(--card-notch-h)),
-    var(--card-notch-x1) calc(100% - var(--card-notch-h)),
+    100% calc(100% - var(--card-notch-h)),
+    calc(var(--card-notch-x2) + var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    var(--card-notch-x2) 100%,
     var(--card-notch-x1) 100%,
-    0 100%
+    calc(var(--card-notch-x1) - var(--card-notch-slope)) calc(100% - var(--card-notch-h)),
+    0 calc(100% - var(--card-notch-h))
   );
 }
 
@@ -2351,7 +2372,7 @@ git push -u origin mainBottom row cards: notch at top */
 .home__faq-card:nth-child(even) {
   clip-path: polygon(
     0 0,
-    var(--card-notch-x1) 0,
+    calc(var(--card-notch-x1) - var(--card-notch-slope)) 0,
     var(--card-notch-x1) var(--card-notch-h),
     var(--card-notch-x2) var(--card-notch-h),
     calc(var(--card-notch-x2) + var(--card-notch-slope)) 0,
@@ -2369,7 +2390,7 @@ git push -u origin mainBottom row cards: notch at top */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 26px;
   padding: 28px 28px;
   cursor: pointer;
   text-align: left;
